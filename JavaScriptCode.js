@@ -40,19 +40,27 @@ function factorial(num) {
   console.log(factorial(5)); // Output: 120
   
 // 6. Write a function to check if a number is prime or not.
+// function isPrime(num) {
+//     if (num <= 1) return false;
+//     if (num <= 3) return true;
+  
+//     if (num % 2 === 0 || num % 3 === 0) return false;
+  
+//     let i = 5;
+//     while (i * i <= num) {
+//       if (num % i === 0 || num % (i + 2) === 0) return false;
+//       i += 6;
+//     }
+//     return true;
+//   }
 function isPrime(num) {
     if (num <= 1) return false;
-    if (num <= 3) return true;
-  
-    if (num % 2 === 0 || num % 3 === 0) return false;
-  
-    let i = 5;
-    while (i * i <= num) {
-      if (num % i === 0 || num % (i + 2) === 0) return false;
-      i += 6;
+    for (let i = 2; i <= Math.sqrt(num); i++) {
+        if (num % i === 0) return false;
     }
     return true;
-  }
+}
+
   console.log(isPrime(11)); // Output: true
 
 // 7. Write a function to remove duplicates from an array.
