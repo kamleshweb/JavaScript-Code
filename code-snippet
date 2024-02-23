@@ -1,0 +1,36 @@
+/1***************************/
+(() => {
+    let x = (y = 10);
+   })();
+    
+   console.log(typeof x);//undefined
+   console.log(typeof y); //number
+/2*****************************/
+  (function(){
+        setTimeout(() => {
+                    console.log(x);//5
+                    console.log(y);//10
+        },0);
+        var x=5;
+        let y=10;
+})()
+/3*****************************/  
+  function fn3() {
+    var fnObj = {
+    x: 1,
+    y: 2,
+    log: function() {
+    console.log(this.x, this.y);// 1 2
+    }
+    }
+    var arrObj = {
+    x: 1,
+    y: 2,
+    log: () => {
+    console.log(this.x, this.y); // undefined undefined
+    }
+    }
+    fnObj.log();
+    arrObj.log();
+    }
+    fn3();
